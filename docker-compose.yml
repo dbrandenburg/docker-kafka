@@ -1,0 +1,12 @@
+version: '2'
+services:
+  zookeeper:
+    build: ./zookeeper
+    ports:
+     - "2181:2181"
+  broker:
+    build: ./broker
+    ports:
+     - "9092:9092"
+    depends_on:
+     - "zookeeper"

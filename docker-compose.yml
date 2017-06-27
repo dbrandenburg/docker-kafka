@@ -1,11 +1,15 @@
 version: '2'
 services:
   zookeeper:
-    build: ./zookeeper
+    build: 
+      context: ./zookeeper
+      dockerfile: Dockerfile.openJDK
     ports:
      - "2181:2181"
   broker:
-    build: ./broker
+    build: 
+      context: ./broker
+      dockerfile: Dockerfile.openJDK
     ports:
      - "9092:9092"
     depends_on:

@@ -16,16 +16,6 @@ services:
     image: kafka-base
     container_name: kafka-broker
     command: ./bin/kafka-server-start.sh config/server.properties --override zookeeper.connect=kafka-zookeeper:2181 --override listeners=PLAINTEXT://0.0.0.0:9092 --override advertised.host.name=kafka-broker
-    links:
-      - kafka-zookeeper
     depends_on:
       - kafka-base
       - kafka-zookeeper
-  kafka-cmd:
-    image: kafka-base
-    container_name: kafka-cmd
-    links:
-      - kafka-zookeeper
-      - kafka-broker
-    depends_on:
-      - kafka-base

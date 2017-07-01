@@ -9,8 +9,8 @@ $ docker-compose up
 ```
 Creating a topic, a producer and consumer:
 ```sh
-$ docker-compose run --rm kafka-cmd ./bin/kafka-topics.sh --zookeeper kafka-zookeeper:2181 --create --topic testtpoic --partitions 1 --replication-factor 1
-$ docker-compose run --rm kafka-cmd ./bin/kafka-console-producer.sh --broker-list kafka-broker:9092 --topic testtopic
-$ docker-compose run --rm kafka-cmd ./bin/kafka-console-consumer.sh --bootstrap-server kafka-broker:9092 --topic testtopic
+$ docker-compose run --rm kafka-base ./bin/kafka-topics.sh --zookeeper kafka-zookeeper:2181 --create --topic testtpoic --partitions 1 --replication-factor 1
+$ docker-compose run --rm kafka-base ./bin/kafka-console-producer.sh --broker-list kafka-broker:9092 --topic testtopic
+$ docker-compose run --rm kafka-base ./bin/kafka-console-consumer.sh --bootstrap-server kafka-broker:9092 --topic testtopic
 ```
 
